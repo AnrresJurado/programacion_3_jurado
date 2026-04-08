@@ -1,0 +1,73 @@
+# --- Dependencias (Recursivo en todas las subcarpetas) ---
+**/node_modules/
+**/bower_components/
+
+# --- Compilación y Salida (Build) ---
+**/dist/
+**/build/
+**/out/
+**/.next/
+**/.cache/
+**/.parcel-cache/
+**/.turbo/
+**/tsstyle/
+
+# --- Variables de Entorno y Secretos ---
+**/.env
+**/.env.local
+**/.env.development.local
+**/.env.test.local
+**/.env.production.local
+**/*.env.sample
+**/sync-conflict-*
+
+# --- Logs y Debugging ---
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+**/.pnpm-debug.log*
+**/logs/
+**/*.log
+**/pids/
+**/*.pid
+**/*.seed
+**/*.snapshot
+
+# --- Herramientas de Testing ---
+**/coverage/
+**/.nyc_output/
+**/.jest/
+**/test-results/
+**/playwright-report/
+**/blob-report/
+**/test-results/
+**/playwright/.cache/
+
+# --- IDEs y Editores de Código ---
+**/.vscode/
+!**/.vscode/extensions.json
+**/.idea/
+**/*.suo
+**/*.ntvs*
+**/*.njsproj
+**/*.sln
+**/*.sw?
+
+# --- Sistema Operativo (macOS / Linux / Windows) ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# --- Base de Datos Local (PostgreSQL/MongoDB si se montan en el repo) ---
+**/data/
+**/pgdata/
+**/*.db
+**/*.sqlite
+
+# --- Odoo (Si el proyecto integra módulos específicos) ---
+**/*.pyc
+**/__pycache__/
