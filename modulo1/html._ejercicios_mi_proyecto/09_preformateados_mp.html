@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion de transporte Público</title>
+</head>
+<body>
+    <h1>Datos Técnicos y Codificación del Sistema</h1>
+    <h2>Estructura de Rutas (Preformateado)</h2>
+    <hr>
+    <pre>
+        [Estación Norte]
+       |
+       |---Ruta A1---> [Sector Financiero]
+       |                      |
+       |                      |---Ruta B2---> [Terminal Central]
+       |
+        [Estación Sur] <------- Conexión Directa ------- [Estación Este]
+    </pre>
+
+    <hr>
+
+    <h2>Ejemplo de Script para Validación de Pasajes</h2>
+
+    <pre>
+        <code>
+            function validarSaldo(tarjeta, costoViaje) {
+                if (tarjeta.saldo >= costoViaje) {
+                    return "Acceso Concedido";
+                }
+                return "Saldo Insuficiente";
+            }
+        </code>
+    </pre>
+
+    <h2>Información General y Entidades HTML</h2>
+
+    <p><strong>Derechos de Autor:</strong> Sistema de Gestión de Transportes &copy; 2026.</p>
+    <p><strong>Simbología de Flujo:</strong> Terrestre &rarr; Control de Pesaje &rarr; Despacho Final. </p>
+    <P><strong>Tarifas de Servicio:</strong> El pasaje estándar tiene un costo de 0,35&euro; (IVA Incluido)</P>
+    <p><strong>Instrucciones de Marcado:</strong> En la base de datos, las unidades se identifican con la etiqueta &lt;vehiculo&gt; seguida del número de placa.</p>
+    <p><strong>Seguridad y Normativa:</strong> Según el Artículo 45 del reglamento,&nbsp;es obligatorio el uso de cinturón.</p>
+    <p><strong>Medición de Distancia:</strong> La ruta principal tiene una extensión de &quot;15 Km&quot; de vía exclusiva.</p>
+</body>
+</html>
