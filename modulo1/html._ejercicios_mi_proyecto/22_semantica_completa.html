@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantica Completa</title>
+</head>
+<body>
+    <header>
+        <h1>Portal de Gestión Transvía</h1>
+        <img src="/modulo1/html/imagenes/WWDC25 macOS Tahoe city orange.jpeg" height="100" width="100">
+        <small>"Sistema Integrado de Control y Logística Urbana"</small>
+        <nav aria-label="menu-principal">
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/modulo1/html._ejercicios_mi_proyecto/12_table_mp.html">Unidades</a></li>
+                <li><a href="/modulo1/html._ejercicios_mi_proyecto/15_formularios_separadores_mp.html">Operadores</a></li>
+                <li><a href="/">Reportes</a></li>
+                <li><a href="/">Soporte</a></li>
+            </ul>
+        </nav>
+
+        <nav aria-label="submenu">
+            <ol>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/">Gestion de flota</a></li>
+                <li>Reporte de Eficiencia 2026</li>
+            </ol>
+        </nav>
+    </header>
+
+    <hr>
+    <main>
+        <article id="analisis de rendimiento">
+            <h1>Análisis de Rendimiento - Flota Eléctrica</h1>
+
+            <p>Autor: <strong>Andres Jurado</strong>  | Publicado el <time datetime="01/04/2026">01 de Mayo de 2026</time></p>
+
+            <section id="introduccion">
+                <p>La modernización del transporte público no es solo una cuestión de cambiar motores; es una reingeniería de datos. En 2026, la integración de software para el monitoreo de carga es vital para la sostenibilidad de la ciudad.</p>
+            </section>
+
+            <section id="comparativa">
+                <h2>Comparativa de Unidades</h2>
+                <table border="3">
+                    <caption>Rendimiento proyectado por kilómetro recorrido.</caption>
+                    <tr>
+                        <th scope="col">Característica</th>
+                        <th scope="col">Bus Eléctrico M1</th>
+                        <th scope="col">Bus Diésel Euro VI</th>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Costo Operativo</th>
+                        <td>0.15€ / km</td>
+                        <td>0.52€ / km</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Emisiones de CO2</th>
+                        <td>0 g/km</td>
+                        <td>115 g/km</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Mantenimiento Mensual</th>
+                        <td>Preventivo Electrónico</td>
+                        <td>Mecanico Integral</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Ahorro Estimado (Fusión)</th>
+                        <td colspan="2">70% de ahorro en costos de energía</td>
+                    </tr>
+
+                </table>
+            </section>
+
+            <section id="protocolo">
+                <h2>Protocolo de Carga de Baterías</h2>
+                <p>Para maximizar la vida útil de los componentes, el operador debe seguir estos pasos:</p>
+
+                <ol>
+                    <li>Verificar que el nivel de carga no baje del 20%.</li>
+                    <li>Conectar al pantógrafo en la estación de transferencia.</li>
+                    <li>Sincronizar los datos de la batería con el Dashboard de React Native.</li>
+                </ol>
+
+                <aside>
+                    <data><strong>Consejo de software:</strong></data>
+                    <p>
+                        Los cálculos de autonomía deben utilizar useMemo en la interfaz móvil para evitar retrasos en el renderizado cuando el GPS actualiza la posición del bus.
+                    </p>
+                </aside>
+            </section>
+
+            <section id="comentarios">
+                 <article>
+                    <header>
+                    <strong>Luis Pérez</strong> —
+                    <time datetime="2026-03-21">21 mar 2026</time>
+                    </header>
+                    <p>Excelente desglose de costos. ¿Tienen datos sobre el desgaste de neumáticos en unidades eléctricas?</p>
+                </article>
+
+                <article>
+                    <header>
+                        <strong>Martha Lopez</strong> -
+                        <time datetime="2026-04-01">01 abril 2026</time>
+                    </header>
+                    <p>Necesitamos este tipo de reportes integrados en el formulario de registro de incidentes diarios.</p>
+                </article>
+            </section>
+        </article>
+    </main>
+</body>
+</html>

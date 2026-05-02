@@ -1,0 +1,14 @@
+.parrafos{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: royalblue;
+}
+
+h3{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: slategray;
+}
+
+.producto-card{
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+}
