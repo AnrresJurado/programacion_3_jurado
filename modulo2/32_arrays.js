@@ -136,23 +136,23 @@ console.log(adultosActivos.map(u => u.nombre));   // ["Ana", "Pedro"]
 // reduce(callback, valorInicial)
 // callback recibe: (acumulador, elementoActual, indice, array)
 
-const numeros = [1, 2, 3, 4, 5];
+const numeros5 = [1, 2, 3, 4, 5];
 
 // Suma total
-const suma = numeros.reduce((acum, n) => acum + n, 0);
+const suma = numeros5.reduce((acum, n) => acum + n, 0);
 console.log(suma);   // 15
 
 // Producto
-const producto = numeros.reduce((acum, n) => acum * n, 1);
+const producto = numeros5.reduce((acum, n) => acum * n, 1);
 console.log(producto);   // 120
 
 // Máximo sin Math.max
-const maximo = numeros.reduce((max, n) => n > max ? n : max, -Infinity);
+const maximo = numeros5.reduce((max, n) => n > max ? n : max, -Infinity);
 console.log(maximo);   // 5
 
 // Contar ocurrencias — acumulador es un objeto
-const frutas = ["manzana", "banana", "manzana", "cereza", "banana", "manzana"];
-const conteo = frutas.reduce((acum, fruta) => {
+const frutas5 = ["manzana", "banana", "manzana", "cereza", "banana", "manzana"];
+const conteo = frutas5.reduce((acum, fruta) => {
   acum[fruta] = (acum[fruta] ?? 0) + 1;
   return acum;
 }, {});
@@ -164,3 +164,17 @@ const anidado = [[1, 2], [3, 4], [5, 6]];
 const plano   = anidado.reduce((acum, arr) => [...acum, ...arr], []);
 console.log(plano);   // [1, 2, 3, 4, 5, 6]
 // alternativa moderna: anidado.flat()
+
+const celsius = [0, 15, -5, 22, 37, 100, -10, 28];
+
+const fahrenheit = celsius.map(c => (c * 9/5) + 32);
+
+const entre0y30 = celsius.filter(c => c >= 0 && c <= 30);
+
+const entre0y30EnF = celsius
+  .filter(c => c >= 0 && c <= 30)
+  .map(c => (c * 9/5) + 32);
+
+console.log("Fahrenheit:", fahrenheit);
+console.log("Entre 0 y 30°C:", entre0y30);
+console.log("Entre 0 y 30°C en °F:", entre0y30EnF);
