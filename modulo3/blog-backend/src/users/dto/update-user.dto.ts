@@ -12,4 +12,7 @@ export class UpdateUserDto {
   @IsOptional()
   @IsString()
   password?: string;
+
+  @IsOptional()
+  isActive?: boolean;
 }
