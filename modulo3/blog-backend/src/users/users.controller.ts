@@ -6,6 +6,7 @@ import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 import { QueryDto } from 'src/common/dtos/query.dto';
 import { SuccessResponseDto } from 'src/common/dtos/response.dto';
 import { FileInterceptor } from '@nestjs/platform-express';
+import { diskStorage } from 'multer';
 
 
 @Controller('users')
