@@ -19,15 +19,14 @@ import { PostsModule } from './posts/posts.module';
       password: process.env.DB_PASS,
       database: process.env.DB_NAME,
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
-      synchronize: true, // ¡Ojo! Úsalo solo en desarrollo, crea/modifica tablas automáticamente
-      
-      // Desactivamos SSL para desarrollo local (localhost)
+      synchronize: true, 
       ssl: process.env.DB_HOST === 'localhost' ? false : { rejectUnauthorized: false },
     }),
     AuthModule,
     UsersModule,
     CategoriesModule,
     PostsModule,
+    MailModule,
   ],
   controllers: [AppController],
   providers: [AppService],
