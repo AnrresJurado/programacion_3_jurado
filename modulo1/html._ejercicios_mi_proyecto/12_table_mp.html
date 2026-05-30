@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Registro de Control de Flota</h1>
+
+    <table>
+        <tr><strong>Listado de Unidades Activas</strong>
+            <th>Unidad</th>
+            <th>Placa</th>
+            <th>Ciudad de Operacion</th>
+        </tr>
+
+        <tr>
+            <td>Bus-101</td>
+            <td>ABC-1234</td>
+            <td>Cuenca</td>
+        </tr>
+
+        <tr>
+            <td>Bus-205</td>
+            <td>PDF-5678</td>
+            <td>Quito</td>
+        </tr>
+
+        <tr>
+            <td>Cam-012</td>
+            <td>GHT-9012</td>
+            <td>Guayaquil</td>
+        </tr>
+    </table>
+
+    <hr>
+    <h1>Reporte de Operaciones por Secciones</h1>
+    <table>(Uso de thead, tbody y tfoot)
+        <thead>
+            <tr>
+                <th>Ruta</th>
+                <th>Kilometraje</th>
+                <th>Consumo Diésel</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Troncal Norte</td>
+                <td>120 km</td>
+                <td>15 Gal</td>
+                <td>Operativo</td>
+            </tr>
+
+            <tr>
+                <td>Alimentador Sur</td>
+                <td>85 km</td>
+                <td>10 Gal</td>
+                <td>En Taller</td>
+            </tr>
+
+            <tr>
+                <td>Ruta Periferica</td>
+                <td>150 km</td>
+                <td>18 Gal</td>
+                <td>Operativo</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td>Totales</td>
+                <td>355 km</td>
+                <td>43 Gal</td>
+                <td> --- </td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <hr>
+    <h1>Desempeño de Conductores (Scope) **</h1>
+    <table>Tabla 3: (Uso de scope="col" y scope="row")
+        <thead>
+            <tr>
+                <th scope="col">Conductor</th>
+                <th scope="col">Turno Mañana</th>
+                <th scope="col">Turno Tarde</th>
+                <th scope="col">Calificacion</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td scope="row"><strong>Andres Jurado</strong></td>
+                <td>100%</td>
+                <td>95%</td>
+                <td>9.8</td>
+            </tr>
+
+            <tr>
+                <td scope="row"><strong>Luis Ruiz</strong></td>
+                <td>90%</td>
+                <td>88%</td>
+                <td>8.5</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h1>Resumen Técnico de Seguridad Vial</h1>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Unidad</th>
+                <th scope="col">Frenos</th>
+                <th scope="col">Luces</th>
+                <th scope="col">Neumáticos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td scope="row">Bus-Troncal-01</td>
+                <td>Aprobado</td>
+                <td>Aprobado</td>
+                <td>Pendiente</td>
+            </tr>
+
+            <tr>
+                <td scope="row">Bus-Troncal-02</td>
+                <td>Aprobado</td>
+                <td>En reparacion</td>
+                <td>Aprobado</td>
+            </tr>
+
+            <tr>
+                <td scope="row">Alimentador-05</td>
+                <td>Critico</td>
+                <td>Aprobado</td>
+                <td>Aprobado</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+    <h1><em>Combinaciones de Celdas - Estadísticas Semanales 🚌</em></h1>
+    <table border="5">
+        <thead>
+            <tr>
+                <th rowspan="2">Dia</th>
+                <th colspan="3">Pasajeros Transportados</th>
+                <th rowspan="2">Ingresos</th>
+            </tr>
+
+            <tr>
+                <th>Mañana</th>
+                <th>Tarde</th>
+                <th>Noche</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Lunes</td>
+                <td>1200</td>
+                <td>800</td>
+                <td>300</td>
+                <td>1500$</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h1>Cronograma de Turnos Especiales</h1>
+    <table border="3">
+        <thead>
+            <tr>
+                <th>Supervisor</th>
+                <th>Franja Horaria</th>
+                <th>Estacion Asignada</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2">Ing. Andres Jurado</td>
+                <td>06:00 - 08:00</td>
+                <td>Terminal Terrestre Norte</td>
+            </tr>
+
+            <tr>
+                <td>08:00 - 10:00</td>
+                <td>Estación de Transferencia</td>
+            </tr>
+
+            <tr>
+                <td rowspan="2">Lic. Maria Luz</td>
+                <td>10:00 - 12:00</td>
+                <td>Terminal Terrestre Sur</td>
+            </tr>
+
+            <tr>
+                <td>12:00 - 14:00</td>
+                <td>Control de Despacho Sur</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+    <h1>Gestión de Mantenimiento 🛠️</h1>
+    <table border="5">
+        <caption><mark>Cronograma de Revisiones Técnicas - Abril 2026</mark></caption> 
+        <thead>
+            <tr>
+                <th>Vehículo</th>
+                <th>Frenos</th>
+                <th>Neumáticos</th>
+                <th>Motor</th>
+                <th>Promedio Desgaste</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Unidad 01</td>
+                <td>Óptimo</td>
+                <td>Regular</td>
+                <td>Bueno</td>
+                <td>85%</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+    <h1>Colgroup - Horarios de Despacho 🕑</h1>
+    <table border="4">
+        <thead>
+            <tr>
+                <col style="background-color: aqua;">
+                <col style="background-color: aqua;">
+                <col style="background-color: aqua;">
+                <col style="background-color: aqua;">
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Inspector</td>
+                <td>Lunes</td>
+                <td>Miercoles</td>
+                <td>Viernes</td>
+            </tr>
+
+            <tr>
+                <td>Jorge Lázaro</td>
+                <td>06:00 AM</td>
+                <td>06:00 AM</td>
+                <td>06:00 AM</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tabla</h1>
+
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Ciudad</th>
+        </tr>
+        <tr>
+            <td>Ana Garcia</td>
+            <td>28</td>
+            <td>Quito</td>
+        </tr>
+        <tr>
+            <td>Luis Perez</td>
+            <td>22</td>
+            <td>Guayaquil</td>
+        </tr>
+        <tr>
+            <td>Pedro Herrera</td>
+            <td>45</td>
+            <td>Ambato</td>
+        </tr>
+    </table>
+<hr>
+    <h1>Tabla por secciones</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Productos</th>
+                <th>Precios</th>
+                <th>Stock</th>
+                <th>Categoria</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Monitor 4k</td>
+                <td>450</td>
+                <td>12</td>
+                <td>Electronicos</td>
+            </tr>
+            <tr>
+                <td>Teclado Mecanico</td>
+                <td>79$</td>
+                <td>12</td>
+                <td>Perifercios</td>
+            </tr>
+
+            <tr>
+                <td>Mouse Inalambrico</td>
+                <td>45$</td>
+                <td>15</td>
+                <td>Perifercios</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Total</td>
+                <td>1500$</td>
+                <td>32</td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+<hr>
+    <h1><em>Tabla Scope - Calificaciones</em></h1>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Materias</th>
+                <th scope="col">1er CORTE</th>
+                <th scope="col">2do Corte</th>
+                <th scope="col">Categoria</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td scope="row"><strong>Programacion 1</strong></td>
+                <td>9</td>
+                <td>10</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td scope="row"><strong>Base de datos 1</strong></td>
+                <td>10</td>
+                <td>10</td>
+                <td>9</td>
+            </tr>
+
+            <tr>
+                <td scope="row"><strong>Calidad de software</strong></td>
+                <td>7</td>
+                <td>10</td>
+                <td>9</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+    <h1><em>Combinaciones de celdas - Calificaciones ⚽️</em></h1>
+    <table border="5">
+        <thead>
+            <tr>
+                <th rowspan="2">Equipo</th>
+                <th colspan="3">Resultados</th>
+                <th rowspan="2">Puntos</th>
+            </tr>
+            <tr>
+                <th>V</th>
+                <TH>E</TH>
+                <TH>D</TH>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Real Madrid</strong></td>
+                <td>22</td>
+                <td>5</td>
+                <td>3</td>
+                <td>71</td>
+            </tr>
+            <tr>
+                <td><strong>Barcelona</strong></td>
+                <td>29</td>
+                <td>6</td>
+                <td>5</td>
+                <td>66</td>
+            </tr>
+            <tr>
+                <td><strong>Atletico</strong></td>
+                <td>18</td>
+                <td>7</td>
+                <td>5</td>
+                <td>61</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h1>Titulo y Resumen - Clasificaciones 📚</h1>
+    <table border="3">
+        <caption><mark>Notas del primer trimestre </mark></caption>
+        <thead>
+            <tr>
+                <th>Alumnos</th>
+                <th>Matematicas</th>
+                <th>Lenguaje</th>
+                <th>Ciencias</th>
+                <th>Promedio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><em>Luis Ruis</em></td>
+                <td>9</td>
+                <td>8</td>
+                <td>9</td>
+                <td>8.7</td>
+            </tr>
+            <tr>
+                <td><em>Jorge Lazaro</em></td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>7.0</td>
+            </tr>
+            <tr>
+                <td><em>Andreina Medina</em></td>
+                <td>10</td>
+                <td>9</td>
+                <td>10</td>
+                <td>9.7</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Media Clase</th>
+                <td>8.3</td>
+                <td>8.0</td>
+                <td>9.8</td>
+                <td>8.5</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <hr>
+    <h1>Colgrup - Horarios 🕑</h1>
+    <table border="2">
+        <thead>
+            <tr>
+                <col style="background-color: chartreuse;">
+                <col style="background-color: rgb(21, 186, 134);">
+                <col style="background-color: azure;">
+                <col style="background-color: cadetblue;">
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><em>Jhony de la Cruz</em></td>
+                <td>Martes</td>
+                <td>Miercoles</td>
+                <td>Jueves</td>
+            </tr>
+            <tr>
+                <td><em>Programacion I</em></td>
+                <td>7:00 am</td>
+                <td>8:00 am</td>
+                <td>9:00 am</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

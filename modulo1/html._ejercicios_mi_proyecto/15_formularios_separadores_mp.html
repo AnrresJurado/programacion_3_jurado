@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Alta de Operadores</title>
+</head>
+<body>
+    <h1>Formulario de Alta de Operadores</h1>
+
+    <form action="/registrar-metodo" method="post">
+        <fieldset>
+            <legend>Datos Personales</legend>
+            <label for="nombre">Nombre Completo:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="ej. Andres Jurado">
+            <label for="correo">Correo Corporativo:</label>
+            <input type="email" id="correo" name="correo" placeholder="ej. ajurado@transporte.com"><br>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Contraseña</legend>
+            <label for="password">Clave de Acceso:</label>
+            <input type="password" id="password" name="password">
+         </fieldset>
+        <br>
+        <fieldset>
+            <legend>Perfil</legend>
+            <label for="perfil_url">Perfil Profesional:</label>
+            <input type="url" id="perfil_url" name="perfil_url" placeholder="ej. https://music.youtube.com/watch?v=tlyhaKzdsxY&list=RDAMVMNtNkhZMuzTI">
+            <label for="telefono">Teléfono de Emergencia:</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="ej. 0998899765"> 
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Unidad</legend>
+            <label for="unidades">Buscar Unidad:</label>
+            <input type="search" id="unidades" name="unidades">
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Experiencia</legend>
+            <label for="experiencia">Años de Experiencia:</label>
+            <input type="number" id="experiencia" name="experiencia" min="0" max="50" value="1">
+            <label for="combustible">Nivel de Combustible: </label>
+            <input type="range" id="combustible" name="combustible" min="0" max="100" value="50"><br>
+        </fieldset>
+        <br>
+        <button type="submit" style="background-color: yellowgreen;">Registrar Operador en el Sistema"</button>
+    </form>
+</body>
+</html>

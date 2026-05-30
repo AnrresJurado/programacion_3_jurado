@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3er Semestre</title>
+    <style>
+        h2 {
+            color:blueviolet;
+            font-size: 3rem;
+        }
+    </style>
+    <link rel="stylesheet" href="03_box_model_mp.css">
+</head>
+<body>
+    <h1 style="color:rgb(0, 21, 255); font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Arquitectura de Espacios: Box Model Logístico</h1>
+    <div class="bloque1">"Autobús Eléctrico - Unidad 101"
+        <p>Esta caja representa el espacio físico que ocupa el bus en el garaje. El padding es la distancia de seguridad interna para que los pasajeros no toquen las paredes.</p>
+    </div>
+    <div class="bloque2">Andén de Carga Rápida A-1
+        <p>Aquí usamos padding asimétrico para simular la zona de acoplamiento. El margin pequeño indica que los andenes están casi pegados entre sí en la terminal.</p>
+    </div>
+    <div class="bloque3">Dimensiones Variables (Sin control de bordes)
+        <p>Sin border-box, si diseñas una estación de 280px y le sumas muros (borde) y zonas de espera (padding), la estación crece y ya no cabe en el terreno asignado.</p>
+    </div>
+    <div class="bloque4">Dimensiones Fijas (Uso de border-box)
+        <p>Con box-sizing: border-box, la estación siempre mide 280px. Los muros y zonas de espera se calculan hacia adentro, garantizando que el diseño encaje perfectamente en el mapa de la ciudad.</p>
+    </div>
+
+</body> 
+</html>

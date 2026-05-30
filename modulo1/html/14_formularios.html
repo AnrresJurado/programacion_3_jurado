@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+</head>
+<body>
+    <h1>Formularios</h1>
+    <form action="/procesar" method="post">
+        <table>
+            <tr>
+                <td>
+                    <label for="nombre">Nombre</label> <br>
+                    <input type="text" id="nombre" name="nombre">
+                </td>
+
+                <td>
+                    <label>Correo Electronico <br>
+                        <input type="email" id="email" name="email">
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="password">Contraseña<br>
+                        <input type="password" id="password" name="password">
+                    </label>
+                </td>
+
+                <td>
+                    <label for="password">Sitio web<br>
+                        <input type="url" id="url" name="url">
+                    </label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="password">Telefono<br>
+                        <input type="tel" id="telefono" name="telefono">
+                    </label>
+                </td>
+
+                <td>
+                    <label for="password">Buscar<br>
+                        <input type="search" id="buscar" name="buscar">
+                    </label>
+                </td>
+            </tr>
+
+        </table>
+        <!--Tipos numericos-->
+            <tr>
+                <td>
+                    <label for="edad">Edad<br>
+                        <input type="number" id="edad" min="0" max="120" step="1">
+                    </label>
+                </td>
+
+                <td>
+                    <label for="volumen">Volumen<br><span id="val-vol">50</span></label>
+                    <input type="range" id="volumen" name="volumen" min="0" max="120" value=50
+                    oninput="document.getElementById('val-vol').textContent=this.value"
+                    >
+                </td>
+            </tr>
+
+        <button type="sumbit">Enviar</button>
+       
+    </form>
+
+</body>
+</html>
