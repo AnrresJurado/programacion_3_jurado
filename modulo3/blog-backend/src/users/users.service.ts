@@ -17,14 +17,26 @@ export class UsersService {
 
   async create(createUserDto: CreateUserDto): Promise<User | null> {
     try {
-      const hashedPassword = await bcrypt.hash(createUserDto!.password!, 10);
+      // Validación preventiva estricta en tiempo de ejecución
+      if (!createUserDto.password || !createUserDto.username || !createUserDto.email) {
+        console.error('[UsersService Error] Faltan propiedades obligatorias en el DTO recibido');
+        return null;
+      }
+
+      const hashedPassword = await bcrypt.hash(createUserDto.password, 10);
+      
+      // Mapeo explícito para garantizar la integridad de las columnas en la tabla física de PostgreSQL
       const user = this.userRepository.create({
-        ...createUserDto,
+        username: createUserDto.username,
+        email: createUserDto.email,
         password: hashedPassword,
+        isActive: true,
       });
+      
       return await this.userRepository.save(user);
     } catch (err) {
-      console.error('Error creating user:', err);
+      console.error('=== FALLO CRÍTICO EN LA INSERCIÓN DE BASE DE DATOS ===');
+      console.error(err); // Esto expondrá la restricción exacta de PostgreSQL en consola
       return null;
     }
   }
@@ -84,12 +96,26 @@ export class UsersService {
     }
   }
 
-  async findByEmail(email: string) {
-    return this.userRepository.findOne({ where: { email } });
+  async findByEmail(identifier: string): Promise<User | null> {
+    try {
+      return await this.userRepository
+        .createQueryBuilder('user')
+        .where('user.email = :identifier', { identifier })
+        .orWhere('user.username = :identifier', { identifier })
+        .getOne();
+    } catch (err) {
+      console.error('Error en findByEmail QueryBuilder:', err);
+      return null;
+    }
   }
 
-  async findByUsername(username: string) {
-    return this.userRepository.findOne({ where: { username } });
+  async findByUsername(username: string): Promise<User | null> {
+    try {
+      return await this.userRepository.findOne({ where: { username } });
+    } catch (err) {
+      console.error('Error fetching user by username:', err);
+      return null;
+    }
   }
 
   async update(id: string, updateUserDto: UpdateUserDto) {

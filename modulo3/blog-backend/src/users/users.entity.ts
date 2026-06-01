@@ -1,24 +1,22 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
-@Entity('users')
+@Entity('users_v2')
 export class User {
   @PrimaryGeneratedColumn('uuid')
-  id?: string;
+  id?: string; // Sigue siendo opcional porque lo genera la base de datos al insertar
 
   @Column({ unique: true })
-  username?: string;
+  username: string; // Obligatorio
+
+  @Column({ unique: true }) // Añadimos unicidad para proteger el índice de búsqueda
+  email: string; // Obligatorio
 
   @Column()
-  email?: string;
-
-  @Column()
-  password?: string;
+  password: string; // Obligatorio
 
   @Column({ default: true })
-  isActive?: boolean;
+  isActive: boolean; // Obligatorio con valor por defecto
 
   @Column({ nullable: true })
-  profile?: string;
-
-  
+  profile?: string; // Opcional legítimo
 }
