@@ -23,3 +23,19 @@ document.getElementById('btn4').addEventListener('click', () => {
     console.log("Mensaje:", mensaje);
     }
 )
+
+
+document.getElementById('campo').addEventListener('input', () => {
+    console.log('Valor del campo: ', document.getElementById('campo').value);
+});
+
+document.getElementById('campo')
+    .addEventListener('input', () => {
+    const valorCampo = document
+    .getElementById('campo_actualizar_texto').value;
+    document.getElementById('campo')
+        .textContent = 
+        `Valor actualizado: ${valorCampo} `;
+});
+
+
