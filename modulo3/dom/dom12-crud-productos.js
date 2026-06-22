@@ -36,6 +36,7 @@ function renderProductos(){
         `;
         cuerpoTabla.appendChild(productoElement);
     });
+    actualizarEstadisticas();
 }
 
 function agregarProducto(){
@@ -102,7 +103,7 @@ function actualizarProducto() {
             nombre: nombreInput,
             descripcion: descripcionInput,
             precio: parseFloat(precioInput)
-        };
+        };a
         renderProductos();
         limpiarFormulario();
         agregarBtn.textContent = 'Agregar Producto';

@@ -11,6 +11,8 @@ import StatusBadge         from './components/StatusBadge'
 import MiniProfileCard     from './components/MiniProfileCard'
 import SimpleInfoTable     from './components/SimpleInfoTable'
 import VehiculosTable  from './components/VehiculosTable'
+import DigitalCounter from './components/DigitalCounter';
+import UserProfileForm from './components/UserProfileFor';
 /*import ProductCard         from './components/ProductCard'
 import ProductCatalogList  from './components/ProductCatalogList'
 import UserProfileCard     from './components/UserProfileCard'*/
@@ -32,7 +34,7 @@ import UserProfileCard     from './components/UserProfileCard'*/
 // │  13  UserProfileCard     — ejercicio: props complejas + rol             │
 // └──────────────────────────────────────────────────────────────────────────┘
 
-const PASO = 11
+const PASO = 13
 const fruits = [
   { name: 'Manzana', emoji: '🍎', calories: 52 },
   { name: 'Banana',  emoji: '🍌', calories: 89 },
@@ -111,6 +113,14 @@ export default function App() {
         
       />
     ) :
+    PASO === 12 ? (
+      <DigitalCounter label="Contador desde la etiqueta"
+      step={1}/>
+    ):
+    PASO === 13 ? (
+      <UserProfileForm/>
+    ):
+    
     /*
     PASO === 11 ? <ProductCard title="Teclado inalámbrico" description="Bluetooth 5.0, retroiluminado" highlighted /> :
     PASO === 12 ? <ProductCatalogList products={catalog} title="Productos disponibles" /> :
