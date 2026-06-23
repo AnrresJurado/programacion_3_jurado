@@ -16,6 +16,7 @@ export class PostsService {
     private categoriesRepository: Repository<Category>,
   ) {}
 
+  // CORREGIDO: Se eliminó la duplicación de este método al final del archivo
   async create(createPostDto: CreatePostDto): Promise<Post | null> {
     try {
       const category = await this.categoriesRepository.findOne({ where: { id: createPostDto.categoryId } });
@@ -73,7 +74,9 @@ export class PostsService {
       }
 
       if (sort) {
-        queryBuilder.orderBy(`post.${sort}`, (order ?? 'ASC') as 'ASC' | 'DESC');
+        // DETALLE TÉCNICO: Si pasas "category", mapeamos a "category.name" para evitar que falle el ORDER BY
+        const orderColumn = sort === 'category' ? 'category.name' : `post.${sort}`;
+        queryBuilder.orderBy(orderColumn, (order ?? 'ASC') as 'ASC' | 'DESC');
       }
 
       return await paginate<Post>(queryBuilder, { page, limit });
