@@ -7,6 +7,7 @@ import UserProfileForm     from './components/UserProfileFor'
 import TaskManager         from './components/TaskManager'
 import CatalogProductItem from './components/CatalogProductItem'
 import ShoppingCartSummary from './components/ShoppingCartSummary'
+import TransportFleetManager_mp from './components/TransportFleetManager_mp'
 
 // ┌──────────────────────────────────────────────────────────────────────┐
 // │  Cambia PASO y guarda (Ctrl+S) para navegar entre componentes.      │
@@ -16,7 +17,7 @@ import ShoppingCartSummary from './components/ShoppingCartSummary'
 // │  4  TaskManager       — estado con array: filter, map, spread       │
 // │  5  Carrito useState  — array de objetos + lógica en App.tsx        │
 // └──────────────────────────────────────────────────────────────────────┘
-const PASO = 5
+const PASO = 6
 
 interface CartItem { id: number; name: string; price: number }
 
@@ -61,6 +62,7 @@ export default function App() {
         <ShoppingCartSummary items={cartItems} onClearCart={handleClearCart} />
       </>
     ) :
+    PASO === 6 ? <TransportFleetManager_mp /> :
     <p style={{ color: '#e00' }}>Paso {PASO}: crea el componente primero</p>
 
   return (
