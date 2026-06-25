@@ -8,6 +8,15 @@ import SearchWithEffect from './components/SearchWithEffect'
 import DebounceSearch   from './components/DebounceSearch'
 import FetchUser        from './components/FetchUser'
 import AutoFocusInput   from './components/AutoFocusInput'
+import TransportMonitor_mp from './components/TransportMonitor_mp'
+import DocumentTitle_mp from './components/DocumentTitle_mp';
+import OnlineStatus_mp from './components/OnlineStatus_mp';
+import WindowSize_mp from './components/WindowSize_mp';
+import LiveClock_mp from './components/LiveClock_mp';
+import SearchWithEffect_mp from './components/SearchWithEffect_mp';
+import DebounceSearch_mp from './components/DebounceSearch_mp';
+import FetchUser_mp from './components/FetchUser_mp';
+import AutoFocusInput_mp from './components/AutoFocusInput_mp';
 
 // ┌──────────────────────────────────────────────────────────────────────┐
 // │  Cambia PASO y guarda (Ctrl+S) para navegar entre componentes.      │
@@ -20,7 +29,7 @@ import AutoFocusInput   from './components/AutoFocusInput'
 // │  7  FetchUser        — fetch real, loading/error, flag cancelled      │
 // │  8  AutoFocusInput   — useRef + useEffect para foco imperativo       │
 // └──────────────────────────────────────────────────────────────────────┘
-const PASO = 7
+const PASO = 17
 
 export default function App() {
   const content =
@@ -32,6 +41,15 @@ export default function App() {
     PASO === 6 ? <DebounceSearch /> :
     PASO === 7 ? <FetchUser /> :
     PASO === 8 ? <AutoFocusInput /> :
+    PASO === 9 ? <TransportMonitor_mp /> :
+    PASO === 10 ? <DocumentTitle_mp /> :
+    PASO === 11 ? <OnlineStatus_mp /> :
+    PASO === 12 ? <WindowSize_mp /> :
+    PASO === 13 ? <LiveClock_mp /> :
+    PASO === 14 ? <SearchWithEffect_mp /> :
+    PASO === 15 ? <DebounceSearch_mp /> :
+    PASO === 16 ? <FetchUser_mp /> :
+    PASO === 17 ? <AutoFocusInput_mp /> :
     <p style={{ color: '#e00' }}>Paso {PASO}: crea el componente primero</p>
 
   return (
@@ -40,3 +58,4 @@ export default function App() {
     </main>
   )
 }
+
