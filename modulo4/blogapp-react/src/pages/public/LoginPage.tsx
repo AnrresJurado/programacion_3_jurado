@@ -1,4 +1,3 @@
-// src/pages/public/LoginPage.tsx
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
@@ -30,6 +29,7 @@ export default function LoginPage() {
   return (
     <div className="mx-auto max-w-sm space-y-4 p-8">
       <h1 className="text-xl font-semibold">Iniciar sesión</h1>
+      
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
         <div>
           <Label htmlFor="username">Usuario</Label>
@@ -45,6 +45,24 @@ export default function LoginPage() {
           {isSubmitting ? 'Ingresando...' : 'Ingresar'}
         </Button>
       </form>
+
+      {/* Separador visual */}
+      <div className="relative my-4">
+        <div className="absolute inset-0 flex items-center">
+          <span className="w-full border-t" />
+        </div>
+        <div className="relative flex justify-center text-xs uppercase">
+          <span className="bg-background px-2 text-muted-foreground">o</span>
+        </div>
+      </div>
+
+      {/* Botón de Google (Redirección nativa) */}
+      <a
+        href={`${import.meta.env.VITE_API_BASE_URL}/auth/google`}
+        className="flex w-full items-center justify-center rounded-md border py-2 text-sm font-medium hover:bg-accent"
+      >
+        Continuar con Google
+      </a>
     </div>
   )
 }
