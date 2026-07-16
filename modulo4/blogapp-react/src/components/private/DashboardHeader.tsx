@@ -27,7 +27,7 @@ export default function DashboardHeader() {
       <DropdownMenu>
         <DropdownMenuTrigger className="flex items-center gap-2">
           <Avatar className="h-8 w-8">
-            <AvatarImage src={avatarSrc(user)} />
+            <AvatarImage src={avatarSrc(user?.avatar)} />
             <AvatarFallback className={cn(avatarColor(user?.username ?? '?'), 'text-white')}>
               {user?.username ? user.username.slice(0, 2).toUpperCase() : '..'}
             </AvatarFallback>
