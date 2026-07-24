@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TMS - Despacho de Cargas</title>
+    <script src="transporte04-eventos.js" defer></script> 
+    <style>
+        .btn-tms {
+            background-color: #0056b3;
+            padding: 0.5em 1em;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="titulo-tms">Panel de Operaciones Diarias</h1>
+    
+    <h2 onclick="alert('Sistema de Respaldo Activo - Servidor Central OK')">Verificar Servidor (Inline)</h2>
+    
+    <button class="btn-tms" id="btn-alerta" onclick="notificarIncidencia()">
+        Reportar Retraso General
+    </button>
+
+    <button class="btn-tms" id="btn-agregar-carga" onclick="agregarCargaManual()">
+        Asignar Carga Corta (Local)
+    </button>
+    <ul id="lista-cargas-locales"></ul>
+
+    <button class="btn-tms" id="btn-agregar-listener">
+        Asignar Carga Internacional (Listener)
+    </button>
+    <ul id="lista-cargas-internacionales"></ul>
+
+    <h2 id="orden-seleccionada">Ninguna orden seleccionada</h2>
+    <button class="btn-tms" id="btn-reemplazar-orden">Fijar Orden #4509</button>
+
+    <br><br>
+    <label>Buscar Código de Contenedor (Muestra en consola):</label><br>
+    <input id="input-busqueda" type="text" placeholder="Ej: CONT-9982...">
+
+    <br><br>
+    <label>Actualizar Nombre del Chofer en ruta:</label><br>
+    <input id="input-chofer" type="text" placeholder="Escribe el nombre...">
+    <p id="visor-chofer">Chofer actual: <strong>No asignado</strong></p>
+</body>
+</html>

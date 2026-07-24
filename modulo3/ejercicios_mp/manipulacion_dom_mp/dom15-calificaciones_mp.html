@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="dom15-calificaciones_mp.js" defer></script>
+   <title>TMS - Reporte de Entregas</title>
+   <style>
+       body { font-family: Arial, sans-serif; margin: 40px; background-color: #f5f7fa; }
+       .card { background: white; border: 1px solid #dde3ea; border-radius: 8px; padding: 24px; max-width: 480px; }
+       .error { color: red; display: none; margin-top: 10px; }
+       table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+       th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+       .estadisticas { display: none; margin-top: 20px; }
+       .grilla-stats { display: flex; gap: 15px; }
+       .stat-box { background: #eef4fb; padding: 15px; border-radius: 4px; flex: 1; text-align: center; }
+   </style>
+</head>
+<body>
+   <div class="card">
+       <h2>Auditoría de Tiempos de Entrega</h2>
+       
+       <div style="margin-bottom: 10px;">
+           <input id="inRuta" type="text" placeholder="Código de Ruta (Ej: R-01)">
+           <input id="inPuntaje" type="number" placeholder="Calificación SLA (0-10)">
+           <button id="btnAgregar">Registrar</button>
+       </div>
+
+       <div id="error" class="error"></div>
+
+       <div id="listaRutas" style="margin-top: 20px;">
+           <h3>Rutas Despachadas</h3>
+           <table>
+               <thead>
+                   <tr>
+                       <th>Código</th>
+                       <th>Puntaje SLA</th>
+                       <th>Estado</th>
+                   </tr>
+               </thead>
+               <tbody id="tablaBody"></tbody>
+           </table>
+           <br>
+           <button id="btnCalcular">Calcular Métricas del Día</button>
+           <button id="btnLimpiar">Resetear Todo</button>
+       </div>
+   </div>
+
+   <div class="estadisticas" id="estadisticas">
+       <h3>Eficiencia Global</h3>
+       <div class="grilla-stats">
+           <div class="stat-box">
+               <div id="sPromedio" style="font-size: 20px; font-weight: bold;"></div>
+               <div>SLA Promedio</div>
+           </div>
+           <div class="stat-box">
+               <div id="sMayor" style="font-size: 20px; font-weight: bold;"></div>
+               <div>Mejor Ruta</div>
+           </div>
+           <div class="stat-box">
+               <div id="sMenor" style="font-size: 20px; font-weight: bold;"></div>
+               <div>Peor Ruta</div>
+           </div>
+           <div class="stat-box">
+               <div id="sAprobados" style="font-size: 20px; font-weight: bold;"></div>
+               <div>Rutas a Tiempo</div>
+           </div>
+       </div>
+   </div>
+</body>
+</html>

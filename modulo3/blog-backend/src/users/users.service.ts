@@ -1,11 +1,11 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable, NotFoundException, BadRequestException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from './users.entity';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { QueryDto } from '../common/dtos/query.dto'; // Importamos el nuevo DTO
-import { paginate, Pagination } from 'nestjs-typeorm-paginate'; // Importamos la paginación
+import { QueryDto } from '../common/dtos/query.dto';
+import { paginate, Pagination } from 'nestjs-typeorm-paginate';
 import * as bcrypt from 'bcrypt';
 
 @Injectable()
@@ -114,6 +114,47 @@ export class UsersService {
     const user = await this.userRepository.findOne({ where: { id: id } });
     if (!user) throw new NotFoundException('User not found');
     user.profile = profile;
+    return this.userRepository.save(user);
+  }
+
+  // ==========================================
+  // Métodos añadidos para la autenticación de Google
+  // ==========================================
+
+  async findByGoogleId(googleId: string) {
+    return this.userRepository.findOne({ where: { googleId } });
+  }
+
+  async createFromGoogle(data: { username: string; email: string; googleId: string; avatarUrl?: string }) {
+    const user = this.userRepository.create({ ...data, isActive: true });
+    return this.userRepository.save(user);
+  }
+
+  async linkGoogleId(id: string, googleId: string, avatarUrl?: string) {
+    const user = await this.userRepository.findOne({ where: { id } });
+    if (!user) throw new NotFoundException('User not found');
+
+    const existing = await this.findByGoogleId(googleId);
+    if (existing && existing.id !== id) {
+      throw new BadRequestException('Esta cuenta de Google ya está vinculada a otro usuario');
+    }
+
+    user.googleId = googleId;
+    if (avatarUrl) user.avatarUrl = avatarUrl;
+    return this.userRepository.save(user);
+  }
+
+  async unlinkGoogleId(id: string) {
+    const user = await this.userRepository.findOne({ where: { id } });
+    if (!user) throw new NotFoundException('User not found');
+    if (!user.password) {
+      throw new BadRequestException(
+        'No puedes desvincular Google sin antes definir una contraseña para tu cuenta',
+      );
+    }
+    // Asignamos undefined para que coincida con el tipado 'string | undefined' de la entidad
+    user.googleId = undefined;
+    user.avatarUrl = undefined;
     return this.userRepository.save(user);
   }
 }

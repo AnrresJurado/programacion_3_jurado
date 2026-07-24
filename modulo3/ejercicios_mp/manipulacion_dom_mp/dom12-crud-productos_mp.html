@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TMS - Gestión de Flota</title>
+    <script src="dom12-crud-productos_mp.js" defer></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .formulario { background-color: #eef4fb; border: 1px solid #b0fce8; padding: 20px; margin-top: 20px; }
+        .formulario input { margin: 5px; padding: 8px; width: 200px; }
+        .formulario button { width: 120px; padding: 5px; margin-bottom: 8px; cursor: pointer; }
+        .stats { display: flex; gap: 20px; margin-bottom: 20px; }
+        .stat-card { background: #f4f4f4; padding: 15px; border-radius: 5px; border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <h2>Monitoreo y Registro de Unidades</h2>
+    
+    <div class="stats">
+        <div class="stat-card">
+            <h3>Total Camiones</h3>
+            <p id="totalCamiones">0</p>
+        </div>
+        <div class="stat-card">
+            <h3>Capacidad Promedio</h3>
+            <p id="capacidadPromedio">0</p>
+        </div> 
+        <div class="stat-card">
+            <h3>Mayor Capacidad</h3>
+            <p id="camionMayor">N/A</p>
+        </div>
+        <div class="stat-card">
+            <h3>Menor Capacidad</h3>
+            <p id="camionMenor">N/A</p>
+        </div>
+    </div>
+
+    <div class="formulario">
+        <h3>Registrar / Editar Unidad</h3>
+        <input id="placa" type="text" placeholder="Placa (Ej: PBX-1234)">
+        <input id="chofer" type="text" placeholder="Chofer Asignado">
+        <input id="capacidad" type="number" placeholder="Capacidad (Toneladas)">
+        <button id="btn_agregar">Agregar Unidad</button>
+        <button id="btn_cancelar">Cancelar</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Placa</th>
+                <th>Chofer Asignado</th>
+                <th>Capacidad (T)</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id=\"cuerpoTabla\"></tbody>
+    </table>
+</body>
+</html>

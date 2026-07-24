@@ -8,6 +8,13 @@ import { UsersModule } from './users/users.module';
 import { CategoriesModule } from './categories/categories.module';
 import { PostsModule } from './posts/posts.module';
 import { MailModule } from './mail/mail.module';
+import { AuthChoferMpController } from './ejemplos-mp/01_auth_chofer_mp.controller';
+import { CategoriaVehiculoMpService } from './ejemplos-mp/02_categoria_vehiculo_mp.service';
+import { CategoriaVehiculoMpController } from './ejemplos-mp/02_categoria_vehiculo_mp.controller';
+import { RutasTransporteMpController } from './ejemplos-mp/03_rutas_transporte_mp.controller';
+import { NotificacionFleteMpService } from './ejemplos-mp/04_notificacion_flete_mp.service';
+import { NotificacionFleteMpController } from './ejemplos-mp/04_notificacion_flete_mp.controller';
+
 
 @Module({
   imports: [
@@ -29,7 +36,9 @@ import { MailModule } from './mail/mail.module';
     PostsModule,
     MailModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [AppController, AuthChoferMpController, 
+    CategoriaVehiculoMpController, RutasTransporteMpController,
+    NotificacionFleteMpController],
+  providers: [AppService, CategoriaVehiculoMpService, NotificacionFleteMpService],
 })
 export class AppModule {}

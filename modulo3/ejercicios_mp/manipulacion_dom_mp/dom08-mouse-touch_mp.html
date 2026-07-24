@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TMS - Capacidad del Contenedor</title>
+    <script src="dom08-mouse-touch_mp.js" defer></script>
+</head>
+<body>
+    <h1 id="titulo">Simulador de Distribución de Peso</h1>
+    <h2>Arrastra horizontalmente para ajustar el volumen asignado</h2>
+    
+    <div id="contenedorTriangulo" style="position:relative; width:100%; height:300px; margin-top:20px; background:#e9ecef; border: 1px solid #ccc;">
+        <div id="triangulo" style="
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 100px solid #0056b3;
+            position: absolute;
+            top: 100px;
+            left: calc(50% - 50px);
+            transition: transform 0.2s ease;
+            cursor: ew-resize;">
+        </div>
+    </div>
+    <p style="text-align: center; font-weight: bold; color: #333;">Indicador de Volumen de Carga</p>
+</body>
+</html>

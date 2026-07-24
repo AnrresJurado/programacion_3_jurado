@@ -1,0 +1,37 @@
+// src/components/ConditionalGreeting.tsx
+
+type TimeOfDay = 'morning' | 'afternoon' | 'evening' | 'night'
+
+interface ConditionalGreetingProps {
+  isLoggedIn: boolean
+  userName?: string
+  timeOfDay?: TimeOfDay
+  greeting?: string
+}
+
+export default function ConditionalGreeting({
+  isLoggedIn,
+  userName = 'visitante',
+  timeOfDay = 'morning',
+}: ConditionalGreetingProps) {
+  const greetings: Record<TimeOfDay, string> = {
+    morning:   'Buenos días',
+    afternoon: 'Buenas tardes',
+    evening:   'Buenas noches',
+    night: 'Buenas noches señor'
+  }
+
+  if (!isLoggedIn) {
+    return (
+      <p style={{ color: '#e00' }}>
+        Por favor inicia sesión para continuar.
+      </p>
+    )
+  }
+
+  return (
+    <p style={{ color: '#333' }}>
+      {greetings[timeOfDay]}, <strong>{userName}</strong>. Bienvenido de vuelta.
+    </p>
+  )
+}
